@@ -16,7 +16,7 @@
 #include "pch.h"
 #include "MainPage.xaml.h"
 
-using namespace RakNet_WindowsStore8_VS2012;
+using namespace RakNetWS10VS2015;
 
 using namespace Platform;
 using namespace Windows::Foundation;
@@ -35,8 +35,8 @@ using namespace Windows::UI::Xaml::Navigation;
 #include "RakSleep.h"
 #include "MessageIdentifiers.h"
 using namespace RakNet;
-#define DEFAULT_SERVER_PORT 61111
-#define DEFAULT_SERVER_ADDRESS "natpunch.jenkinssoftware.com"
+#define DEFAULT_SERVER_PORT 10000
+#define DEFAULT_SERVER_ADDRESS "52.59.145.248"
 
 MainPage::MainPage()
 {

@@ -17,18 +17,19 @@
 
 #include "App.g.h"
 
-namespace RakNet_WindowsStore8_VS2012
+namespace RakNetWS10VS2015
 {
 	/// <summary>
 	/// Provides application-specific behavior to supplement the default Application class.
 	/// </summary>
 	ref class App sealed
 	{
-	public:
-		App();
+	protected:
 		virtual void OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEventArgs^ args) override;
-
+	internal:
+		App();
 	private:
 		void OnSuspending(Platform::Object^ sender, Windows::ApplicationModel::SuspendingEventArgs^ e);
+		void OnNavigationFailed(Platform::Object ^sender, Windows::UI::Xaml::Navigation::NavigationFailedEventArgs ^e);
 	};
 }

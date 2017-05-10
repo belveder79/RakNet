@@ -36,7 +36,7 @@ using namespace ThreadEmulation;
 void RakSleep(unsigned int ms)
 {
 #ifdef _WIN32
-	Sleep(ms);
+	::Sleep(ms);
 
 
 

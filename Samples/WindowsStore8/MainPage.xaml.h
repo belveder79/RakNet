@@ -17,7 +17,7 @@
 
 #include "MainPage.g.h"
 
-namespace RakNet_WindowsStore8_VS2012
+namespace RakNetWS10VS2015
 {
 	/// <summary>
 	/// An empty page that can be used on its own or navigated to within a Frame.

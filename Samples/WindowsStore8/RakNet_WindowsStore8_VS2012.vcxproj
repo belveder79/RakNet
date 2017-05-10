@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|ARM">
       <Configuration>Debug</Configuration>
@@ -28,44 +28,49 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{bf122ab3-e8dd-4ade-b604-ca313404e322}</ProjectGuid>
-    <RootNamespace>RakNet_WindowsStore8_VS2012</RootNamespace>
+    <RootNamespace>RakNetWS10VS2015</RootNamespace>
     <DefaultLanguage>en-US</DefaultLanguage>
-    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
     <AppContainerApplication>true</AppContainerApplication>
+    <ApplicationType>Windows Store</ApplicationType>
+    <ApplicationTypeRevision>10</ApplicationTypeRevision>
+    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformMinVersion>10.0.10586.0</WindowsTargetPlatformMinVersion>
+    <ProjectName>RakNetWS10VS2015</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -90,7 +95,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
-    <PackageCertificateKeyFile>RakNet_WindowsStore8_VS2012_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateKeyFile>RakNet_WS10_VS2015.pfx</PackageCertificateKeyFile>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
     <ClCompile>
@@ -110,7 +115,7 @@
       <DisableSpecificWarnings>4453</DisableSpecificWarnings>
       <PreprocessorDefinitions>_UNICODE;UNICODE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS;WINDOWS_STORE_RT;_RAKNET_SUPPORT_TCPInterface=0;_RAKNET_SUPPORT_PacketizedTCP=0;_RAKNET_SUPPORT_EmailSender=0;_RAKNET_SUPPORT_HTTPConnection=0;_RAKNET_SUPPORT_HTTPConnection2=0;_RAKNET_SUPPORT_TelnetTransport=0;_RAKNET_SUPPORT_NatTypeDetectionServer=0;_RAKNET_SUPPORT_UDPProxyServer=0;_RAKNET_SUPPORT_UDPProxyCoordinator=0;_RAKNET_SUPPORT_UDPForwarder=0</PreprocessorDefinitions>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <AdditionalIncludeDirectories>$(SolutionDir)DependentExtensions\WinPhone8;$(SolutionDir)DependentExtensions\WinRT;$(SolutionDir)Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\DependentExtensions\WinPhone8;$(SolutionDir)..\..\DependentExtensions\WinRT;$(SolutionDir)..\..\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -119,7 +124,7 @@
       <DisableSpecificWarnings>4453</DisableSpecificWarnings>
       <PreprocessorDefinitions>_UNICODE;UNICODE;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS;WINDOWS_STORE_RT;_RAKNET_SUPPORT_TCPInterface=0;_RAKNET_SUPPORT_PacketizedTCP=0;_RAKNET_SUPPORT_EmailSender=0;_RAKNET_SUPPORT_HTTPConnection=0;_RAKNET_SUPPORT_HTTPConnection2=0;_RAKNET_SUPPORT_TelnetTransport=0;_RAKNET_SUPPORT_NatTypeDetectionServer=0;_RAKNET_SUPPORT_UDPProxyServer=0;_RAKNET_SUPPORT_UDPProxyCoordinator=0;_RAKNET_SUPPORT_UDPForwarder=0</PreprocessorDefinitions>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <AdditionalIncludeDirectories>$(SolutionDir)DependentExtensions\WinPhone8;$(SolutionDir)DependentExtensions\WinRT;$(SolutionDir)Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\DependentExtensions\WinPhone8;$(SolutionDir)..\..\DependentExtensions\WinRT;$(SolutionDir)..\..\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -153,6 +158,7 @@
     <ClInclude Include="..\..\Source\ConsoleServer.h" />
     <ClInclude Include="..\..\Source\DataCompressor.h" />
     <ClInclude Include="..\..\Source\DirectoryDeltaTransfer.h" />
+    <ClInclude Include="..\..\Source\DR_SHA1.h" />
     <ClInclude Include="..\..\Source\DS_BinarySearchTree.h" />
     <ClInclude Include="..\..\Source\DS_BPlusTree.h" />
     <ClInclude Include="..\..\Source\DS_BytePool.h" />
@@ -255,7 +261,6 @@
     <ClInclude Include="..\..\Source\RPC4Plugin.h" />
     <ClInclude Include="..\..\Source\SecureHandshake.h" />
     <ClInclude Include="..\..\Source\SendToThread.h" />
-    <ClInclude Include="..\..\Source\DR_SHA1.h" />
     <ClInclude Include="..\..\Source\SignaledEvent.h" />
     <ClInclude Include="..\..\Source\SimpleMutex.h" />
     <ClInclude Include="..\..\Source\SimpleTCPServer.h" />
@@ -289,17 +294,17 @@
     <ClInclude Include="..\..\Source\WSAStartupSingleton.h" />
     <ClInclude Include="..\..\Source\XBox360Includes.h" />
     <ClInclude Include="..\..\Source\_FindFirst.h" />
-    <ClInclude Include="pch.h" />
     <ClInclude Include="App.xaml.h">
       <DependentUpon>App.xaml</DependentUpon>
     </ClInclude>
+    <ClInclude Include="pch.h" />
     <ClInclude Include="MainPage.xaml.h">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
-      <SubType>Designer</SubType>
+      <FileType>Document</FileType>
     </ApplicationDefinition>
     <Page Include="Common\StandardStyles.xaml">
       <SubType>Designer</SubType>
@@ -309,13 +314,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <AppxManifest Include="Package.appxmanifest">
-      <SubType>Designer</SubType>
-    </AppxManifest>
-    <None Include="RakNet_WindowsStore8_VS2012_TemporaryKey.pfx" />
-  </ItemGroup>
-  <ItemGroup>
     <Image Include="Assets\Logo.png" />
+    <Image Include="Assets\Logo300x300.png" />
+    <Image Include="Assets\Logo310x310.png" />
     <Image Include="Assets\SmallLogo.png" />
     <Image Include="Assets\StoreLogo.png" />
     <Image Include="Assets\SplashScreen.png" />
@@ -336,6 +337,7 @@
     <ClCompile Include="..\..\Source\ConsoleServer.cpp" />
     <ClCompile Include="..\..\Source\DataCompressor.cpp" />
     <ClCompile Include="..\..\Source\DirectoryDeltaTransfer.cpp" />
+    <ClCompile Include="..\..\Source\DR_SHA1.cpp" />
     <ClCompile Include="..\..\Source\DS_BytePool.cpp" />
     <ClCompile Include="..\..\Source\DS_ByteQueue.cpp" />
     <ClCompile Include="..\..\Source\DS_HuffmanEncodingTree.cpp" />
@@ -404,7 +406,6 @@
     <ClCompile Include="..\..\Source\RPC4Plugin.cpp" />
     <ClCompile Include="..\..\Source\SecureHandshake.cpp" />
     <ClCompile Include="..\..\Source\SendToThread.cpp" />
-    <ClCompile Include="..\..\Source\DR_SHA1.cpp" />
     <ClCompile Include="..\..\Source\SignaledEvent.cpp" />
     <ClCompile Include="..\..\Source\SimpleMutex.cpp" />
     <ClCompile Include="..\..\Source\SocketLayer.cpp" />
@@ -443,6 +444,14 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RakNetWS10VS2015.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
