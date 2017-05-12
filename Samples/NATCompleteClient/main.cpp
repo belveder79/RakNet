@@ -28,16 +28,16 @@
 #include "Itoa.h"
 
 // To include miniupnp, see Samples\NATCompleteClient\readme.txt
-#include "miniupnpc.h"
-#include "upnpcommands.h"
-#include "upnperrors.h"
+//#include "miniupnpc.h"
+//#include "upnpcommands.h"
+//#include "upnperrors.h"
 
 using namespace RakNet;
 
 #define DEFAULT_RAKPEER_PORT 50000
 #define RAKPEER_PORT_STR "0"
-#define DEFAULT_SERVER_PORT "61111"
-#define DEFAULT_SERVER_ADDRESS "natpunch.jenkinssoftware.com"
+#define DEFAULT_SERVER_PORT "10000"
+#define DEFAULT_SERVER_ADDRESS "52.59.145.248"
 
 enum SampleResult
 {
@@ -166,6 +166,7 @@ SystemAddress ConnectBlocking(RakNet::RakPeerInterface *rakPeer, const char *hos
 		}
 	}
 }
+/*
 struct UPNPFramework : public SampleFramework
 {
 	UPNPFramework() { sampleResult=SUPPORT_UPNP;} 
@@ -190,31 +191,31 @@ struct UPNPFramework : public SampleFramework
 					device->descURL, device->st);
 			}
 
-			char lanaddr[64];	/* my ip address on the LAN */
+			char lanaddr[64];	// my ip address on the LAN 
 			struct UPNPUrls urls;
 			struct IGDdatas data;
 			if (UPNP_GetValidIGD(devlist, &urls, &data, lanaddr, sizeof(lanaddr))==1)
 			{
 				// 4/16/2012 Why was I doing this? Just to read my external port? That shouldn't be necessary
-				/*
-				SystemAddress serverAddress=SelectAmongConnectedSystems(rakPeer, "NatTypeDetectionServer");
-				if (serverAddress==RakNet::UNASSIGNED_SYSTEM_ADDRESS)
-				{
-					serverAddress=ConnectBlocking(rakPeer, "NatTypeDetectionServer", DEFAULT_SERVER_ADDRESS, DEFAULT_SERVER_PORT);
-					if (serverAddress==RakNet::UNASSIGNED_SYSTEM_ADDRESS)
-					{
-						printf("Failed to connect to a server.\n");
-						sampleResult=FAILED;
-						return;
-					}
-				}
+				
+				//SystemAddress serverAddress=SelectAmongConnectedSystems(rakPeer, "NatTypeDetectionServer");
+				//if (serverAddress==RakNet::UNASSIGNED_SYSTEM_ADDRESS)
+				//{
+				//	serverAddress=ConnectBlocking(rakPeer, "NatTypeDetectionServer", DEFAULT_SERVER_ADDRESS, DEFAULT_SERVER_PORT);
+				//	if (serverAddress==RakNet::UNASSIGNED_SYSTEM_ADDRESS)
+				//	{
+				//		printf("Failed to connect to a server.\n");
+				//		sampleResult=FAILED;
+				//		return;
+				//	}
+				//}
 
 
-				char iport[32];
-				Itoa(sockets[0]->boundAddress.GetPort(),iport,10);
-				char eport[32];
-				Itoa(rakPeer->GetExternalID(serverAddress).GetPort(),eport,10);
-				*/
+				//char iport[32];
+				//Itoa(sockets[0]->boundAddress.GetPort(),iport,10);
+				//char eport[32];
+				//Itoa(rakPeer->GetExternalID(serverAddress).GetPort(),eport,10);
+				
 
 				// Use same external and internal ports
 				DataStructures::List<RakNetSocket2* > sockets;
@@ -284,6 +285,7 @@ struct UPNPFramework : public SampleFramework
 	}
 
 };
+*/
 struct NatTypeDetectionFramework : public SampleFramework
 {
 	// Set to FAILED to skip this test
@@ -745,7 +747,6 @@ void PrintPacketMessages(Packet *packet, RakPeerInterface *rakPeer)
 
 enum FeatureList
 {
-	_UPNPFramework,
 	_NatTypeDetectionFramework,
 	_NatPunchthoughFramework,
 	_Router2Framework,
@@ -773,7 +774,6 @@ int main(void)
 
 	SampleFramework *samples[FEATURE_LIST_COUNT];
 	unsigned int i=0;
-	samples[i++] = new UPNPFramework;
 	samples[i++] = new NatTypeDetectionFramework;
 	samples[i++] = new NatPunchthoughClientFramework;
 	samples[i++] = new Router2Framework;
@@ -799,7 +799,7 @@ int main(void)
 	if (hasServer==false)
 		printf("Note: Only UPNP and Router2 are supported without a server\nYou may want to consider using the Lobby2/Steam project. They host the\nservers for you.\n\n");
 
-	FeatureList currentStage=_UPNPFramework;
+	FeatureList currentStage= _NatTypeDetectionFramework;
 
 	if (hasServer==false)
 	{
