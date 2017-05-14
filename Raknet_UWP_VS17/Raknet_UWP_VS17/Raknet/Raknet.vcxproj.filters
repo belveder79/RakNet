@@ -14,6 +14,9 @@
     <Filter Include="Raknet Additional">
       <UniqueIdentifier>{3522f88c-b763-4687-bf3a-79ccbcf3a5de}</UniqueIdentifier>
     </Filter>
+    <Filter Include="CSWrapperSource">
+      <UniqueIdentifier>{9986fc5c-8f49-48eb-8246-4d68713d7e5e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="targetver.h" />
@@ -825,6 +828,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\DependentExtensions\WinPhone8\ThreadEmulation.cpp">
       <Filter>Raknet Additional</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\CSWrapperSource\NATPunchWrapper.cpp">
+      <Filter>CSWrapperSource</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

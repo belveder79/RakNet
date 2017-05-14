@@ -127,12 +127,33 @@
       <CompileAsWinRT>true</CompileAsWinRT>
       <PreprocessorDefinitions>WINDOWS_STORE_RT;_WINSOCK_DEPRECATED_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_RAKNET_DLL;_CRT_NONSTDC_NO_DEPRECATE;_WINDLL;_RAKNET_SUPPORT_TCPInterface=0;_RAKNET_SUPPORT_PacketizedTCP=0;_RAKNET_SUPPORT_EmailSender=0;_RAKNET_SUPPORT_HTTPConnection=0;_RAKNET_SUPPORT_HTTPConnection2=0;_RAKNET_SUPPORT_TelnetTransport=0;_RAKNET_SUPPORT_NatTypeDetectionServer=0;_RAKNET_SUPPORT_UDPProxyServer=0;_RAKNET_SUPPORT_UDPProxyCoordinator=0;_RAKNET_SUPPORT_UDPForwarder=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\DependentExtensions\WinPhone8;$(ProjectDir)..\..\..\DependentExtensions\WinRT;$(ProjectDir)..\..\..\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CompileAsManaged>false</CompileAsManaged>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <AdditionalUsingDirectories>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v3.5</AdditionalUsingDirectories>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <PrecompiledHeaderFile />
+      <PrecompiledHeaderOutputFile />
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <GenerateWindowsMetadata>false</GenerateWindowsMetadata>
+      <OutputFile>$(OutDir)$(TargetName)d$(TargetExt)</OutputFile>
+      <ManifestFile>$(IntDir)$(TargetName)d$(TargetExt).intermediate.manifest</ManifestFile>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName)d.pdb</ProgramDatabaseFile>
+      <ProfileGuidedDatabase>$(OutDir)$(TargetName)d.pgd</ProfileGuidedDatabase>
+      <ImportLibrary>$(OutDir)$(TargetName)d.lib</ImportLibrary>
     </Link>
+    <Manifest>
+      <OutputManifestFile>$(OutDir)$(TargetName)d.manifest</OutputManifestFile>
+    </Manifest>
+    <Xdcmake>
+      <OutputFile>$(OutDir)$(TargetName)d.xml</OutputFile>
+    </Xdcmake>
+    <Bscmake>
+      <OutputFile>$(OutDir)$(TargetName)d.bsc</OutputFile>
+    </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -140,6 +161,11 @@
       <CompileAsWinRT>true</CompileAsWinRT>
       <PreprocessorDefinitions>WINDOWS_STORE_RT;_WINSOCK_DEPRECATED_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_RAKNET_DLL;_CRT_NONSTDC_NO_DEPRECATE;_WINDLL;_RAKNET_SUPPORT_TCPInterface=0;_RAKNET_SUPPORT_PacketizedTCP=0;_RAKNET_SUPPORT_EmailSender=0;_RAKNET_SUPPORT_HTTPConnection=0;_RAKNET_SUPPORT_HTTPConnection2=0;_RAKNET_SUPPORT_TelnetTransport=0;_RAKNET_SUPPORT_NatTypeDetectionServer=0;_RAKNET_SUPPORT_UDPProxyServer=0;_RAKNET_SUPPORT_UDPProxyCoordinator=0;_RAKNET_SUPPORT_UDPForwarder=0;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(ProjectDir)..\..\..\DependentExtensions\WinPhone8;$(ProjectDir)..\..\..\DependentExtensions\WinRT;$(ProjectDir)..\..\..\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <CompileAsManaged>false</CompileAsManaged>
+      <ExceptionHandling>false</ExceptionHandling>
+      <AdditionalUsingDirectories>$(FrameworkPathOverride)</AdditionalUsingDirectories>
+      <PrecompiledHeaderFile />
+      <PrecompiledHeaderOutputFile />
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -151,6 +177,10 @@
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <CompileAsWinRT>false</CompileAsWinRT>
+      <CompileAsManaged>true</CompileAsManaged>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <AdditionalUsingDirectories>$(FrameworkPathOverride)</AdditionalUsingDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -162,6 +192,7 @@
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <CompileAsWinRT>false</CompileAsWinRT>
+      <AdditionalUsingDirectories>$(FrameworkPathOverride)</AdditionalUsingDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -171,8 +202,13 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <CompileAsWinRT>false</CompileAsWinRT>
+      <CompileAsManaged>true</CompileAsManaged>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <AdditionalUsingDirectories>$(FrameworkSDKRoot)</AdditionalUsingDirectories>
+      <ExceptionHandling>false</ExceptionHandling>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -184,6 +220,7 @@
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <CompileAsWinRT>false</CompileAsWinRT>
+      <AdditionalUsingDirectories>$(FrameworkPathOverride)</AdditionalUsingDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -352,6 +389,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\CSWrapperSource\NATPunchWrapper.cpp" />
     <ClCompile Include="..\..\..\DependentExtensions\WinPhone8\ThreadEmulation.cpp" />
     <ClCompile Include="..\..\..\DependentExtensions\WinRT\WinRTSocketAdapter.cpp" />
     <ClCompile Include="..\..\..\Source\Base64Encoder.cpp" />
